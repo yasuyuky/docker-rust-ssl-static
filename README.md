@@ -1,13 +1,12 @@
-# Docker Image for cross compilation in rust
+# Docker image for cross-compiling rust-lang, with static ssl library
 
-this contains static compiled version of openssl
 
-# Usage
+##︎ Usage
 
 ```
 docker run -it --rm -v ${PWD}:/source yasuyuky/rust-ssl-static cargo build --release --target=x86_64-unknown-linux-musl
 ```
 
-# License
+## License
 
 MIT
