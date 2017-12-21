@@ -2,9 +2,10 @@ FROM ubuntu:xenial
 MAINTAINER yasuyuky <yasuyuki.ymd@gmail.com>
 
 RUN apt-get -y update && apt-get -y install curl g++ libssl-dev pkg-config musl-tools
-RUN curl -sSf https://sh.rustup.rs > rustup.sh && chmod +x rustup.sh && ./rustup.sh -y && rm rustup.sh
+ENV RUST_VERSION 1.22.1
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain ${RUST_VERSION}
 ENV PATH $PATH:/root/.cargo/bin
-RUN rustup default stable
+RUN rustup default ${RUST_VERSION}
 RUN rustup target add x86_64-unknown-linux-musl
 RUN mkdir source && mkdir .cargo && echo "[target.x86_64-unknown-linux-musl]\n" > .cargo/config
 
