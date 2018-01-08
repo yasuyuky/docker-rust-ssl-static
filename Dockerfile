@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 MAINTAINER yasuyuky <yasuyuki.ymd@gmail.com>
 
 RUN apt-get -y update && apt-get -y install curl g++ libssl-dev pkg-config musl-tools
-ENV RUST_VERSION 1.22.1
+ENV RUST_VERSION 1.23.0
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain ${RUST_VERSION}
 ENV PATH $PATH:/root/.cargo/bin
 RUN rustup target add x86_64-unknown-linux-musl
