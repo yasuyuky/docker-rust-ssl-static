@@ -8,7 +8,7 @@ ENV PATH $PATH:/root/.cargo/bin
 RUN rustup target add x86_64-unknown-linux-musl
 RUN mkdir source && mkdir .cargo && echo "[target.x86_64-unknown-linux-musl]\n" > .cargo/config
 
-ENV SSL_VER 1.0.2j
+ENV SSL_VER 1.0.2o
 ENV CC musl-gcc
 ENV PREFIX /usr/local
 ENV PATH /usr/local/bin:$PATH
